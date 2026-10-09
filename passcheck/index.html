@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PassCheck – Password Strength Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>🔐 PassCheck</h1>
+    <p class="sub">Checks your password locally — nothing ever leaves your browser.</p>
+
+    <div class="input-row">
+      <input id="pw" type="password" placeholder="Type a password…" autocomplete="off" />
+      <button id="toggle" class="ghost" title="Show / hide">👁</button>
+    </div>
+
+    <div class="meter"><div id="bar"></div></div>
+    <div class="label-row"><span id="label">—</span><span id="score"></span></div>
+
+    <div class="stats">
+      <div><small>Entropy</small><strong id="entropy">0 bits</strong></div>
+      <div><small>Time to crack</small><strong id="crack">—</strong></div>
+      <div><small>Length</small><strong id="len">0</strong></div>
+    </div>
+
+    <ul id="checks" class="checks"></ul>
+    <ul id="tips" class="tips"></ul>
+
+    <div class="gen">
+      <label>Generate <input id="genLen" type="number" min="8" max="64" value="16" /> chars</label>
+      <button id="generate">Generate strong password</button>
+    </div>
+  </main>
+  <script src="strength.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
